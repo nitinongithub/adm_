@@ -1,0 +1,19 @@
+/* CSS Document */
+
+.printPreview{font-family:Verdana, Geneva, sans-serif; font-size:14px; border:#03F dashed 2px; display:!important}
+.printLetter{display:!important}
+.tdStyle1{border-bottom: 1px solid #000000; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:25px}
+.tdStyle2{border-bottom: 1px solid #000000; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:16px}
+.tdStyle3{font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:40px}
+.tdStyle4{font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:11px}
+.tdStyleHead{border-bottom: 1px solid #000000; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:35px}
+.tdStyleHead1{border-bottom: 0px solid #000000; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:35px}
+.tdStyleHead2{font-weight:normal; font-family:Arial, Helvetica, sans-serif; color:#000; font-size:20px}
+td{color:#000}
+.LetterContent{font-family:'Times New Roman', Times, serif; font-size:17px}
+.addr{font-family: Verdana, Geneva, sans-serif; font-size:10px; font-weight:normal}
+/*Remove Element*/
+#logo, #catnavi, .topnavi, .more-link, .navigation, #sidebartop, #related, #social, #sponsors, .tabs, #allpost, .toolbar, .splitbox, #commentform, #commentabs .idTabs, .postmeta-content .comments, #respond h3, .tag, .footerlinks {display:none;}
+
+/* Show URL */
+a:link, a:visited {display: none}
