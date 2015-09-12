@@ -6,7 +6,7 @@ require("dbconnect.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>. : Total Male &amp; Female Student Admitted : .</title>
+        <title>. : Address Detail for <?php echo date('Y'); ?> : .</title>
         <?PHP require("headerinclude.php"); ?>
         <?php
         $qry_crs = "select courseID, name from course order by courseID";
