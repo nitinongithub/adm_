@@ -1,0 +1,28 @@
+SELECT crsID, gender, count(gender) as count_gender from admittedstudents group by crsID, gender;
+
+SELECT a.courseID, a.ID, a.name, a.mname, a.fname, b.address, b.city, b.district, b.state, b.country, b.phone, b.mobile from stud_personal a, stud_perm_adr_contact b where a.ID = b.STUD_ID AND a.ID = ANY (select regID from admittedstudents);
+
+SELECT city, count(b.city) as city from stud_personal a, stud_perm_adr_contact b where a.ID = b.STUD_ID AND a.ID = ANY (select regID from admittedstudents) group by city;
+
+SELECT `instname`, count(`instname`) as count FROM `z1_view_last_school` group by `instname`;
+
+CREATE OR REPLACE VIEW Z1_VIEW_STUDENT_QUALIFIATION AS SELECT pq.* FROM `prev_qualification` pq WHERE `instname` != '-x-';
+
+CREATE OR REPLACE VIEW Z1_VIEW_STUDENT_QUALIFIATION AS SELECT pq.* FROM `prev_qualification` pq WHERE `instname` != '-x-' ORDER BY qualifID desc;
+
+CREATE OR REPLACE VIEW z1_view_max_qualification as SELECT stud_ID, max(qualifID) as qualifID from z1_view_student_qualifiation group by stud_ID;
+
+CREATE OR REPLACE VIEW z1_view_last_school as SELECT a.* from Z1_VIEW_STUDENT_QUALIFIATION a, z1_view_max_qualification b WHERE a.STUD_ID = b.STUD_ID and a.qualifID = b.qualifID;
+
+
+
+
+INSERT INTO `ai_admission_2015`.`menu` (`menuID`, `menuItem`, `content`, `priority`) VALUES ('11', 'New Reports', '#', '7');
+
+INSERT INTO `ai_admission_2015`.`submenu` (`submenuID`, `submenuItem`, `content`, `path`, `menuID`) VALUES ('33', 'Male &amp; Female Admitted', 'malefemale.php', '<li><a href="malefemale.php" target="_blank">Male &amp; Female Admitted</a></li>', '11');
+
+INSERT INTO `ai_admission_2015`.`submenu` (`submenuID`, `submenuItem`, `content`, `path`, `menuID`) VALUES ('34', 'Address Detail', 'addrdetail.php', '<li><a href="addrdetail.php" target="_blank">Address Detail</a></li>', '11');
+
+INSERT INTO `ai_admission_2015`.`submenu` (`submenuID`, `submenuItem`, `content`, `path`, `menuID`) VALUES ('35', 'School wise total students', 'schoolwise.php', '<li><a href="schoolwise.php" target="_blank">Address Detail</a></li>', '11');
+
+INSERT INTO `ai_admission_2015`.`submenu` (`submenuID`, `submenuItem`, `content`, `path`, `menuID`) VALUES ('36', 'City Wise Detail', 'citywisestudent.php', '<li><a href="citywisestudent.php" target="_blank">City Wise Detail</a></li>', '11');
