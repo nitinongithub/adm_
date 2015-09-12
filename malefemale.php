@@ -9,7 +9,7 @@ require("dbconnect.php");
         <title>. : Total Male &amp; Female Student Admitted : .</title>
         <?PHP require("headerinclude.php"); ?>
         <?php
-        $qry_crs = "select courseID, name from course";
+        $qry_crs = "select courseID, name from course order by courseID";
         $res_crs = mysql_query($qry_crs) or die(mysql_error());
         $count = 1;
         ?>
@@ -22,7 +22,7 @@ require("dbconnect.php");
             <?PHP if (mysql_num_rows($res_crs) > 0) { ?>	
                 <H3><font color="#000000">Total Male &amp; Female Admitted in Year <?php echo date('Y'); ?></font></H3>
                 <H3 id="totalm_f"></H3>
-                <div style="overflow: auto; width: 700px; height: 450px">
+                <div style="overflow: auto; width: 700px; height: auto">
                     <table border="0" cellpadding="0" cellspacing="0" class="sortable" id="hovertable" width="500" style="font-size: 20px">
                         <tr>
                             <th align="left">COURSE</th>
@@ -79,13 +79,13 @@ require("dbconnect.php");
                     </table>
                 </div>
                 <div style="clear: both"></div>
-                <div style="width: 700px; text-align: right">
-                <table border="0" width="300" cellpadding="5" cellspacing="0" style="font-size: 20px; float: right;">
+                <div style="width: 700px; text-align: right; position: fixed; top: 0px; right: 0px">
+                <table border="0" width="200" cellpadding="5" cellspacing="0" style="font-size: 20px; float: right;">
                     <tr>
                         <td colspan="2" height="10"></td>
                     </tr>
                     <tr style="background: #f0f0f0">
-                        <td>Total Male </td>
+                        <td>Total Male</td>
                         <td><?php echo $cnt_male; ?></td>
                     </tr>
                     <tr style="background: #D0D0D0">
@@ -93,6 +93,7 @@ require("dbconnect.php");
                         <td onload="total_count(2,3);"><?php echo $cnt_female;?></td>
                     </tr>
                 </table>
+                </div>  
             <?php } ?>
         </center>
     </body>
