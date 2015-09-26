@@ -15,8 +15,6 @@ CREATE OR REPLACE VIEW z1_view_max_qualification as SELECT stud_ID, max(qualifID
 CREATE OR REPLACE VIEW z1_view_last_school as SELECT a.* from Z1_VIEW_STUDENT_QUALIFIATION a, z1_view_max_qualification b WHERE a.STUD_ID = b.STUD_ID and a.qualifID = b.qualifID;
 
 
-
-
 INSERT INTO `ai_admission_2015`.`menu` (`menuID`, `menuItem`, `content`, `priority`) VALUES ('11', 'New Reports', '#', '7');
 
 INSERT INTO `ai_admission_2015`.`submenu` (`submenuID`, `submenuItem`, `content`, `path`, `menuID`) VALUES ('33', 'Male &amp; Female Admitted', 'malefemale.php', '<li><a href="malefemale.php" target="_blank">Male &amp; Female Admitted</a></li>', '11');
