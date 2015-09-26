@@ -1,0 +1,8 @@
+CREATE OR REPLACE view `z1_view_student_qualifiation_12` AS select `pq`.`prevQuaID` AS `prevQuaID`,`pq`.`instname` AS `instname`,`pq`.`boarduniv` AS `boarduniv`,`pq`.`yearofpassing` AS `yearofpassing`,`pq`.`subjects` AS `subjects`,`pq`.`marksobt` AS `marksobt`,`pq`.`qualifID` AS `qualifID`,`pq`.`stud_ID` AS `stud_ID` from `prev_qualification` `pq` where (`pq`.`instname` <> '-x-' and `pq`.`qualifID` = 2);
+
+
+CREATE OR REPLACE view `z1_view_student_qualifiation_10` AS select `pq`.`prevQuaID` AS `prevQuaID`,`pq`.`instname` AS `instname`,`pq`.`boarduniv` AS `boarduniv`,`pq`.`yearofpassing` AS `yearofpassing`,`pq`.`subjects` AS `subjects`,`pq`.`marksobt` AS `marksobt`,`pq`.`qualifID` AS `qualifID`,`pq`.`stud_ID` AS `stud_ID` from `prev_qualification` `pq` where (`pq`.`instname` <> '-x-' and `pq`.`qualifID` = 1);
+
+CREATE OR REPLACE view `z1_view_student_qualifiation_Grad` AS select `pq`.`prevQuaID` AS `prevQuaID`,`pq`.`instname` AS `instname`,`pq`.`boarduniv` AS `boarduniv`,`pq`.`yearofpassing` AS `yearofpassing`,`pq`.`subjects` AS `subjects`,`pq`.`marksobt` AS `marksobt`,`pq`.`qualifID` AS `qualifID`,`pq`.`stud_ID` AS `stud_ID` from `prev_qualification` `pq` where (`pq`.`instname` <> '-x-' and `pq`.`qualifID` = 3);
+
+CREATE OR REPLACE view `z1_view_student_qualifiation_Other` AS select `pq`.`prevQuaID` AS `prevQuaID`,`pq`.`instname` AS `instname`,`pq`.`boarduniv` AS `boarduniv`,`pq`.`yearofpassing` AS `yearofpassing`,`pq`.`subjects` AS `subjects`,`pq`.`marksobt` AS `marksobt`,`pq`.`qualifID` AS `qualifID`,`pq`.`stud_ID` AS `stud_ID` from `prev_qualification` `pq` where (`pq`.`instname` <> '-x-' and `pq`.`qualifID` = 4);
