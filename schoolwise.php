@@ -27,6 +27,12 @@ require("dbconnect.php");
                             <th align="left">COUNT</th>
                         </tr>
                             <?php
+								$tot_count = mysql_query("select count(*) as count_ from z1_view_last_school");
+								$tc_ = mysql_fetch_array($tot_count);
+								if($tc_['count_'] != 0){
+									$total_ = $tc_['count_'];
+								}
+								
                                 $qry = "SELECT `instname`, count(`instname`) as count FROM `z1_view_last_school` group by `instname`";
                                 $result = mysql_query($qry) or die(mysql_error());
                                 $cnt_ = 0;
@@ -44,6 +50,18 @@ require("dbconnect.php");
                     </table>
                 </div>
                 <div style="clear: both"></div>
+				<div style="width: 200px; text-align: right; position: fixed; top: 50px; right: 0px">
+                <table border="0" width="200" cellpadding="5" cellspacing="0" style="font-size: 20px; float: right;">
+                    <tr>
+                        <td colspan="2" height="10"></td>
+                    </tr>
+                    <tr style="background: #f0f0f0">
+                        <td>Total Count</td>
+                        <td><?php echo $total_; ?></td>
+                    </tr>
+                    
+                </table>
+                </div>
         </center>
     </body>
 </html>
